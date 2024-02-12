@@ -1,0 +1,14 @@
+#send {
+	width: 20px;
+	height: 20px;
+}
+
+#parsed {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+#parsed p {
+	border: 1px solid black;
+	margin: 5px;
+}

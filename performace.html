@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script defer src="index.js"></script>
+    <title>Friends</title>
+    <script defer src="performance.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="mySidenav" class="sidenav">
         <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-        <a href="#">Game Ratings</a>
+        <a href="index.html">Game Ratings</a>
         <a href="#">Friends</a>
         <a href="#">Online Status</a>
         <a href="ratingHistory.html">Rating History</a>
@@ -19,11 +19,11 @@
       
     
     <div id="main">
-        <p>Search for a user's game ratings</p>
+        <p>Search for a user's performance by typing their username and then game type, separated with a space.</p>
+        <p>Game Types: ultraBullet, bullet, blitz, rapid, classical, correspondence, chess960, crazyhouse, antichess, atomic, horde, kingOfTheHill, racingKings, threeCheck</p>
         <input type="text" id="selector">
         <button id="send">Search</button>
         <p id="parsed"></p>
     </div>
-
 </body>
 </html>

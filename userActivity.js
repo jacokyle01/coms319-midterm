@@ -1,16 +1,14 @@
 const endpoint = "https://lichess.org/api/user/";
 
 const button = document.getElementById("send");
-const gameType = document.getElementById("gameType")
 const textbox = document.getElementById("selector");
 const root = document.getElementById("parsed");
 
 button.addEventListener("click", (e) => {
 	console.log(textbox.value);
-	console.log(gameType);
-	console.log(endpoint + textbox.value + + "/perf/" + gameType);
+	console.log(endpoint + textbox.value);
     clearResults();
-	fetchAndDisplay(endpoint + textbox.value + "/perf/" + gameType);
+	fetchAndDisplay(endpoint + textbox.value + "/activity");
 });
 
 const clearResults = () => {

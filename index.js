@@ -7,13 +7,13 @@ const root = document.getElementById("parsed");
 button.addEventListener("click", (e) => {
 	console.log(textbox.value);
 	console.log(endpoint + textbox.value);
-    clearResults();
+	clearResults();
 	fetchAndDisplay(endpoint + textbox.value);
 });
 
 const clearResults = () => {
-    root.innerHTML = '';
-}
+	root.innerHTML = "";
+};
 
 const fetchAndDisplay = (endpoint) => {
 	fetch(endpoint)

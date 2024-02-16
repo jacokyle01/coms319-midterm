@@ -35,11 +35,23 @@ const fetchAndDisplay = (endpoint) => {
 			const typeE = document.createElement("h3");
 			typeE.innerHTML = type;
 			const ratingE = document.createElement("h4");
-			ratingE.innerHTML = (!!data.perfs[type].rating) ? data.perfs[type].rating : "?";
+			ratingE.innerHTML = !!data.perfs[type].rating
+				? data.perfs[type].rating
+				: "?";
+
+			if (data.perfs[type].prov) {
+				ratingE.innerHTML += "?";
+			}
+			const progress = document.createElement("span");
+			progress.innerHTML = !!data.perfs[type].prog
+				? data.perfs[type].prog
+				: "0";
+
 			const paragraph = document.createElement("p");
-			const line = document.createElement("hr");
+			// const line = document.createElement("hr");
 			paragraph.appendChild(typeE);
 			paragraph.appendChild(ratingE);
+			paragraph.appendChild(progress);
 			root.appendChild(paragraph);
 		}
 	};

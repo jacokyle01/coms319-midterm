@@ -30,6 +30,7 @@ const fetchAndDisplay = (endpoint) => {
 
 	const parseResult = (data) => {
 		//destructure JSON; for each gamemode, record type + rating and put it in a paragraph
+		//TODO refactor: one option- SWITCH perf: either negative, positive, or non-existant, handle cases individually
 		for (const type in data.perfs) {
 			const str = `${type} : ${data.perfs[type].rating}`;
 			const typeE = document.createElement("h3");

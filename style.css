@@ -7,6 +7,24 @@
 	background-color: black;
 }
 
+.type0 {
+	color: white;
+}
+
+.type- {
+	color: red;
+}
+
+.typePos {
+	color: lime;
+}
+
+.rating-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
 #selector {
 	width: 400px;
 	height: 40px;

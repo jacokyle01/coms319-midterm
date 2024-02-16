@@ -46,12 +46,24 @@ const fetchAndDisplay = (endpoint) => {
 			progress.innerHTML = !!data.perfs[type].prog
 				? data.perfs[type].prog
 				: "0";
-
+			if (progress.innerHTML > 0) {
+				progress.innerHTML = "+" + progress.innerHTML;
+			}
+			//really hacky
+			progress.className =
+				"type" +
+				(progress.innerHTML.charAt(0) == "+"
+					? "Pos"
+					: progress.innerHTML.charAt(0));
 			const paragraph = document.createElement("p");
-			// const line = document.createElement("hr");
 			paragraph.appendChild(typeE);
-			paragraph.appendChild(ratingE);
-			paragraph.appendChild(progress);
+
+			const wrapper = document.createElement("div");
+			wrapper.className = "rating-wrap";
+
+			wrapper.appendChild(ratingE);
+			wrapper.appendChild(progress);
+			paragraph.appendChild(wrapper);
 			root.appendChild(paragraph);
 		}
 	};

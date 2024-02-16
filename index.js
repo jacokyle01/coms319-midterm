@@ -35,7 +35,7 @@ const fetchAndDisplay = (endpoint) => {
 			const typeE = document.createElement("h3");
 			typeE.innerHTML = type;
 			const ratingE = document.createElement("h4");
-			ratingE.innerHTML = data.perfs[type].rating;
+			ratingE.innerHTML = (!!data.perfs[type].rating) ? data.perfs[type].rating : "?";
 			const paragraph = document.createElement("p");
 			const line = document.createElement("hr");
 			paragraph.appendChild(typeE);

@@ -40,13 +40,13 @@ const fetchAndDisplay = (endpoint) => {
 };
 
 // function openNav() {
-//     document.getElementById("mySidenav").style.width = "250px";
+//     document.getElementById("mynavbar").style.width = "250px";
 //     document.getElementById("main").style.marginLeft = "250px";
 //     document.body.style.backgroundColor = "#280035";
 // }
 
 // function closeNav() {
-//     document.getElementById("mySidenav").style.width = "0";
+//     document.getElementById("mynavbar").style.width = "0";
 //     document.getElementById("main").style.marginLeft = "0";
 //     document.body.style.backgroundColor = "#280035";
 // }

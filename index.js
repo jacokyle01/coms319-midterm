@@ -32,11 +32,12 @@ const fetchAndDisplay = (endpoint) => {
 		//destructure JSON; for each gamemode, record type + rating and put it in a paragraph
 		for (const type in data.perfs) {
 			const str = `${type} : ${data.perfs[type].rating}`;
-			const typeE = document.createElement("h2");
+			const typeE = document.createElement("h3");
 			typeE.innerHTML = type;
-			const ratingE = document.createElement("h3");
+			const ratingE = document.createElement("h4");
 			ratingE.innerHTML = data.perfs[type].rating;
 			const paragraph = document.createElement("p");
+			const line = document.createElement("hr");
 			paragraph.appendChild(typeE);
 			paragraph.appendChild(ratingE);
 			root.appendChild(paragraph);

@@ -68,7 +68,7 @@ img {
 	display: flex;
 	flex-direction: column;
 	justify-content: stretch;
-	gap: 10px;
+	gap: px;
 	margin: 20px;
 	width: 320px;
 	border-radius: 12px;

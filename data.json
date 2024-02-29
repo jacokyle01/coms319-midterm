@@ -1,3 +1,17 @@
 {
-    "racer": "images/racer.png"
+	"racer": "images/racer.png",
+	"blitz": "images/blitz.jpeg",
+	"bullet": "images/bullet.png",
+	"classical": "images/classical.png",
+	"correspondence": "images/correspondence.png",
+	"crazyhouse": "images/crazyhouse.jpeg",
+	"rapid": "images/rapid.png",
+	"storm": "images/storm.png",
+	"ultraBullet": "images/ultraBullet.png",
+	"kingOfTheHill": "images/kingOfTheHill.png",
+	"streak": "images/streak.png",
+	"chess960": "images/chess960.jpeg",
+	"racingKings": "images/racing_kings.png",
+	"threeCheck": "images/3check.png",
+	"puzzle": "images/puzzle.jpeg"
 }

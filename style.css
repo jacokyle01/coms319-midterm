@@ -145,3 +145,16 @@ span {
 		"Lucida Sans", Arial, sans-serif;
 	font-size: 35px;
 }
+
+.row {
+	display: flex;
+	background-color: gray;
+	margin: 5px;
+	border-radius: 5px;
+	justify-content: space-around;
+}
+
+#root {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}

@@ -13,5 +13,8 @@
 	"chess960": "images/chess960.jpeg",
 	"racingKings": "images/racing_kings.png",
 	"threeCheck": "images/3check.png",
-	"puzzle": "images/puzzle.jpeg"
+	"puzzle": "images/puzzle.jpeg",
+	"atomic": "images/atomic.png",
+	"horde": "images/horde.png",
+	"antichess": "images/antichess.jpeg"
 }

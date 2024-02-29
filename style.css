@@ -7,6 +7,16 @@
 	background-color: black;
 }
 
+#top-wrap {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+img {
+	max-width: 40px;
+	max-height: 40px;
+}
+
 .type0 {
 	color: white;
 }

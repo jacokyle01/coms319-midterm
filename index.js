@@ -25,49 +25,72 @@ const fetchAndDisplay = (endpoint) => {
 		})
 		.then((data) => {
 			//if API responds, display raw and parsed JSON
-			parseResult(data);
+			loadImages().then((images) => {
+				console.log(images);
+				parseResult(data, images);
+			});
+			// parseResult(data, images);
 		});
+};
 
-	const parseResult = (data) => {
-		//destructure JSON; for each gamemode, record type + rating and put it in a paragraph
-		//TODO refactor: one option- SWITCH perf: either negative, positive, or non-existant, handle cases individually
-		for (const type in data.perfs) {
-			const str = `${type} : ${data.perfs[type].rating}`;
-			const typeE = document.createElement("h3");
-			typeE.innerHTML = type;
-			const ratingE = document.createElement("h4");
-			ratingE.innerHTML = !!data.perfs[type].rating
-				? data.perfs[type].rating
-				: "?";
+const loadImages = async () => {
+	try {
+		const response = await fetch("data.json");
+		const json = await response.json();
+		console.log(json);
+		return json;
+	} catch (error) {
+		console.error(error);
+	}
+};
 
-			if (data.perfs[type].prov) {
-				ratingE.innerHTML += "?";
-			}
-			const progress = document.createElement("span");
-			progress.innerHTML = !!data.perfs[type].prog
-				? data.perfs[type].prog
-				: "0";
-			if (progress.innerHTML > 0) {
-				progress.innerHTML = "+" + progress.innerHTML;
-			}
-			//really hacky
-			progress.className =
-				"type" +
-				(progress.innerHTML.charAt(0) == "+"
-					? "Pos"
-					: progress.innerHTML.charAt(0));
-			const paragraph = document.createElement("p");
-			paragraph.appendChild(typeE);
+const parseResult = (data, images) => {
+	//destructure JSON; for each gamemode, record type + rating and put it in a paragraph
+	//TODO refactor: one option- SWITCH perf: either negative, positive, or non-existant, handle cases individually
+	for (const type in data.perfs) {
+		const str = `${type} : ${data.perfs[type].rating}`;
+		const typeE = document.createElement("h3");
+		const topWrap = document.createElement("div");
+		topWrap.id = "top-wrap";
 
-			const wrapper = document.createElement("div");
-			wrapper.className = "rating-wrap";
+		typeE.innerHTML = type;
+		const ratingE = document.createElement("h4");
+		ratingE.innerHTML = !!data.perfs[type].rating
+			? data.perfs[type].rating
+			: "?";
 
-			wrapper.appendChild(ratingE);
-			wrapper.appendChild(progress);
-			paragraph.appendChild(wrapper);
-			root.appendChild(paragraph);
+		if (data.perfs[type].prov) {
+			ratingE.innerHTML += "?";
 		}
-	};
+		const progress = document.createElement("span");
+		progress.innerHTML = !!data.perfs[type].prog ? data.perfs[type].prog : "0";
+		if (progress.innerHTML > 0) {
+			progress.innerHTML = "+" + progress.innerHTML;
+		}
+		//really hacky
+		progress.className =
+			"type" +
+			(progress.innerHTML.charAt(0) == "+"
+				? "Pos"
+				: progress.innerHTML.charAt(0));
+		const paragraph = document.createElement("p");
+
+		const image = document.createElement("img");
+		console.log(images);
+		image.src = images[type];
+
+		topWrap.appendChild(image);
+		topWrap.appendChild(typeE);
+		paragraph.appendChild(topWrap);
+
+		const wrapper = document.createElement("div");
+		wrapper.className = "rating-wrap";
+
+		wrapper.appendChild(ratingE);
+		wrapper.appendChild(progress);
+		paragraph.appendChild(wrapper);
+		root.appendChild(paragraph);
+	}
 };
 
 // function openNav() {

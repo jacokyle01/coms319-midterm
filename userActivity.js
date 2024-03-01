@@ -25,16 +25,20 @@ const fetchAndDisplay = (endpoint) => {
 		})
 		.then((data) => {
 			//if API responds, display raw and parsed JSON
-			parseResult(data);
+			loadImages().then((images) => {
+				console.log(images);
+				parseResult(data, images);
+			});
+			// parseResult(data, images);
 		});
+};
 
 	const parseResult = (data) => {
 		//destructure JSON; for each gamemode, record type + rating and put it in a paragraph
-		for (const type in data.perfs) {
-			const str = `${type} : ${data.perfs[type].rating}`;
-			const paragraph = document.createElement("p");
+		for (const type in data.interval) {
+			const str = `${type} : ${data.interval[type].start}`;
+			const paragraph = document.createElement("h2");
 			paragraph.innerHTML = str;
 			root.appendChild(paragraph);
 		}
-	};
 };

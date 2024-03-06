@@ -12,6 +12,27 @@
 	justify-content: space-evenly;
 }
 
+#div-act {
+	border: solid white 4px;
+	margin-left: 10px;
+	margin-top: 10px;
+	border-radius: 10px;
+	background-color: #22002d;
+}
+
+#follow {
+	color: #1c7200;
+	font-weight: bolder;
+}
+
+#unfollow {
+	color: #818181;
+}
+
+#div-act2 {
+	border-top: solid white;
+}
+
 img {
 	height: 40px;
 	width: 40px;
